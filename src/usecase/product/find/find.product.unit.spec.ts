@@ -28,8 +28,7 @@ describe('Find prodcut usecase unit tests', () => {
 
   it('Should throw if no product is found', async () => {
     const productRepository = MockRepository()
-    jest.spyOn(productRepository, 'find').mockResolvedValueOnce(undefined)
-
+    jest.spyOn(productRepository, 'find').mockRejectedValueOnce(new Error("Product not found"))
     const usecase = new FindProductUseCase(productRepository)
 
     expect(usecase.execute({ id: '1234' })).rejects.toThrow("Product not found")
