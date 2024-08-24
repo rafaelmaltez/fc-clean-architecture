@@ -26,16 +26,17 @@ export default class ProductRepository implements ProductRepositoryInterface {
   }
 
   async find(id: string): Promise<Product> {
+    let productModel;
     try {
-      const productModel = await ProductModel.findOne({
+      productModel = await ProductModel.findOne({
         where: { id },
         rejectOnEmpty: true
-      }
-      );
-      return new Product(productModel.id, productModel.name, productModel.price);
+      });
+      console.log("PASSOU NO TRY", productModel)
     } catch (error) {
       throw new Error("Product not found")
     }
+    return new Product(productModel.id, productModel.name, productModel.price);
   }
 
   async findAll(): Promise<Product[]> {
