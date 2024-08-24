@@ -8,7 +8,7 @@ export default class FindProductUseCase {
     this.productRepository = productRepository
   }
 
-  async excute(input: FindProductInputDto): Promise<FindProductOutputDto> {
+  async execute(input: FindProductInputDto): Promise<FindProductOutputDto> {
     const product = await this.productRepository.find(input.id)
     if (!product) throw new Error("Product not found")
     return {
