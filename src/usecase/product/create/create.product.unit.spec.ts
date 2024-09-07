@@ -40,7 +40,6 @@ describe('Create product use case unit tests', () => {
     };
 
     const output = await createProductUseCase.execute(input);
-    console.log('output', output);
 
     expect(output).toEqual({
       id: expect.any(String),

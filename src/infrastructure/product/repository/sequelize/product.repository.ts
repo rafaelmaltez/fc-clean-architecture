@@ -33,7 +33,6 @@ export default class ProductRepository implements ProductRepositoryInterface {
         where: { id },
         rejectOnEmpty: true
       });
-      console.log("PASSOU NO TRY", productModel)
     } catch (error) {
       throw new Error("Product not found")
     }
