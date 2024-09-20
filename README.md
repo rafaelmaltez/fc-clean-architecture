@@ -23,3 +23,6 @@ npm test
 Os arquivos com a realização dos desafios se encontram nos diretórios listados abaixo:
 
  - [Desafio Use cases para Product ](./src/usecase/product/)
+ - [Desafio de API para Product](./src/infrastructure/api/routes/product.route.ts)
+ - [Desafio Notification para Product](./src/usecase/product/)
+ - [Desafio de validação de Product](./src/domain/product/validator/product.yup.validator.ts)
